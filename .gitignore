@@ -1,0 +1,23 @@
+ 
+# Large binaries / VM images
+isos/
+*.vdi
+*.vmdk
+*.iso
+
+vms/
+*.vdi
+*.vmdk
+*.iso
+
+
+# Python virtualenvs
+env/
+.venv/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Windows swap & logs
+Thumbs.db
+*.evtx
