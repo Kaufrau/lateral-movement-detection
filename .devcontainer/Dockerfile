@@ -1,10 +1,11 @@
 # .devcontainer/Dockerfile  (GPU build)
-FROM nvidia/cuda:12.5.0-cudnn-runtime-ubuntu22.04
+FROM nvidia/cuda:12.5.1-cudnn-devel-ubuntu22.04
 
 # ---- System deps ----
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-        build-essential git curl ca-certificates && \
+        apt-get install -y --no-install-recommends \
+        build-essential git curl ca-certificates \
+        python3 python3-pip && \
     rm -rf /var/lib/apt/lists/*
 
 # ---- Non-root vscode user (matches devcontainer.json "remoteUser") ----
@@ -20,7 +21,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # ---- Poetry + tooling ----
-RUN pip install --no-cache-dir pipx && \
+# use python3 -m pip so it works even if /usr/local/bin isn't linked yet
+RUN python3 -m pip install --no-cache-dir pipx && \
     pipx install poetry && \
     pipx ensurepath
 
