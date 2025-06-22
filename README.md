@@ -7,3 +7,4 @@ This repository contains:
 
 * Week 1 status: Win10 gold snapshot created
 * Week 3 status: Audit policy: [full-success+failure (CSV)](https://github.com/Kaufrau/lateral-movement-detection/blob/main/docs/auditpol_backup.csv)
+* Week 4 status: ...
