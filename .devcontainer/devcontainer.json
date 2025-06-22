@@ -1,0 +1,51 @@
+{
+  "name": "ids-gpu-dev",
+
+  // Build from your own Dockerfile (CUDA 12 + Python 3.12)
+  "build": { "dockerfile": "Dockerfile" },
+
+  // Pass the GPU through to the container
+  "runArgs": ["--gpus", "all"],
+
+  // ---- Dev-container features ----
+  "features": {
+    // Docker CLI inside the container
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    // Node 20 (only keep if you’ll build JS assets or Grafana plugins)
+    "ghcr.io/devcontainers/features/node:1": { "version": "20" },
+    // Small bundle of curl, unzip, Git extras, etc.
+    "ghcr.io/devcontainers/features/common-utils:2": {}
+  },
+
+  // Mount repo here
+  "workspaceFolder": "/workspace",
+
+  // Forward common lab ports
+  "forwardPorts": [8888, 5000, 9200, 5601, 3000],
+
+  // One-time setup after the image is built
+  "postCreateCommand": "pipx install --system-site-packages poetry && poetry install",
+
+  // VS Code goodies (safe to drop if you hate clutter)
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-azuretools.vscode-docker",
+        "elastic.elastic-vscode",
+        "njpwerner.autodocstring"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.formatting.provider": "black",
+        "python.linting.pylintEnabled": false,
+        "python.linting.flake8Enabled": true,
+        "python.testing.pytestEnabled": true
+      }
+    }
+  },
+
+  // Use the non-root user
+  "remoteUser": "vscode"
+}
