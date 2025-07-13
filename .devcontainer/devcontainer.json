@@ -2,31 +2,33 @@
   "name": "ids-gpu-dev",
 
   // Build from your own Dockerfile (CUDA 12 + Python 3.12)
-  "build": { "dockerfile": "Dockerfile" },
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
 
-  // Pass the GPU through to the container
+  // Forward the host GPU to the container (requires NVIDIA Container Toolkit)
   "runArgs": ["--gpus", "all"],
 
-  // ---- Dev-container features ----
+  // ---------- Dev-container features ----------
   "features": {
-    // Docker CLI inside the container
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
-    // Node 20 (only keep if you’ll build JS assets or Grafana plugins)
-    "ghcr.io/devcontainers/features/node:1": { "version": "20" },
-    // Small bundle of curl, unzip, Git extras, etc.
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    },
     "ghcr.io/devcontainers/features/common-utils:2": {}
   },
 
-  // Mount repo here
+  // Workspace root inside the container
   "workspaceFolder": "/workspace",
 
-  // Forward common lab ports
+  // Common lab ports to forward
   "forwardPorts": [8888, 5000, 9200, 5601, 3000],
 
   // One-time setup after the image is built
-  "postCreateCommand": "pipx install --system-site-packages poetry && poetry install",
+  "postCreateCommand": "if [ -f pyproject.toml ]; then poetry install; else echo 'No pyproject.toml found, skipping poetry install.'; fi",
 
-  // VS Code goodies (safe to drop if you hate clutter)
+
+  // VS Code-specific goodies
   "customizations": {
     "vscode": {
       "extensions": [
@@ -46,6 +48,6 @@
     }
   },
 
-  // Use the non-root user
+  // Run as the non-root “vscode” user (defined in the base image)
   "remoteUser": "vscode"
 }
