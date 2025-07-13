@@ -21,3 +21,11 @@ env/
 # Windows swap & logs
 Thumbs.db
 *.evtx
+"Lateral movement_timeline.docx" 
+echo lateral_movement_paper.docx 
+Lateral_movement_thesis.docx 
+Wk2_to_do.docx 
+
+# Office & other temp artefacts
+~$*
+*.tmp
