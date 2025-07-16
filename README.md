@@ -1,10 +1,10 @@
-# 🛡️ Lateral Movement Detection Using ML & Drift-Aware Methods
+# Lateral Movement Detection Using ML & Drift-Aware Methods
 
 This repository supports a PhD-level research project focused on **detecting lateral movement** in Windows environments using **machine learning**, **streaming data analysis**, and **drift-aware models**. The project includes a full virtual lab setup, a log ingestion pipeline, baseline models, drift detectors, and thesis writing.
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 | Path                      | Purpose |
 |---------------------------|---------|
@@ -22,7 +22,7 @@ This repository supports a PhD-level research project focused on **detecting lat
 
 ---
 
-## 🧪 Lab Setup & Monitoring Stack
+## Lab Setup & Monitoring Stack
 
 - **VMs**:
   - `gold` snapshot of Windows 10 Enterprise
@@ -36,7 +36,7 @@ This repository supports a PhD-level research project focused on **detecting lat
 
 ---
 
-## 🧠 Machine Learning & Drift-Aware Detection
+## Machine Learning & Drift-Aware Detection
 
 - **Baseline models**: Logistic Regression, Random Forest, XGBoost, MLP
 - **Drift detectors**: ADWIN, HDDM, Hoeffding Tree, Adaptive Tree
@@ -48,7 +48,7 @@ This repository supports a PhD-level research project focused on **detecting lat
 
 ---
 
-## ✍️ PhD Writing
+## PhD Writing
 
 - Drafts of thesis chapters, journal articles, and blog posts are versioned under:
   - `notes/` – Research plans and early paper drafts
@@ -57,11 +57,11 @@ This repository supports a PhD-level research project focused on **detecting lat
 
 ---
 
-## 📆 Project Timeline & Milestones
+## Project Timeline & Milestones
 
 -This is a 39-week R&D plan with ~7-15 hours/week commitment.
 
-### ✅ Current Week (2)
+### Current Week (2)
 
 | Focus |
 |-------|
@@ -73,14 +73,14 @@ This repository supports a PhD-level research project focused on **detecting lat
 
 ---
 
-### 🔜 Next Steps
+### Next Steps
 
 - **Week 3**: Deploy ELK stack and validate Sysmon ingestion, create Python venv + `requirements.txt`, capture first benign trace, configure WEF
 - **Week 4**: Write `sysmon_parser.py`, draft `feature_schema.json`, initialize Feast repo, start DVC/lakeFS, write ethics checklist, build test suite
 
 ---
 
-## 📌 Deliverables So Far
+## Deliverables So Far
 
 | Artifact | Description |
 |----------|-------------|
@@ -92,7 +92,7 @@ This repository supports a PhD-level research project focused on **detecting lat
 
 ---
 
-## 📚 Inspiration & Philosophy
+## Inspiration & Philosophy
 
 This project integrates principles from:
 - MLOps best practices
