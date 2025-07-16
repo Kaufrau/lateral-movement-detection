@@ -1,4 +1,3 @@
- 
 # Large binaries / VM images
 isos/
 *.vdi
@@ -10,6 +9,10 @@ vms/
 *.vmdk
 *.iso
 
+# VM log and state files
+*.vbox-prev
+*.nvram
+*.log
 
 # Python virtualenvs
 env/
@@ -21,11 +24,19 @@ env/
 # Windows swap & logs
 Thumbs.db
 *.evtx
-"Lateral movement_timeline.docx" 
-echo lateral_movement_paper.docx 
-Lateral_movement_thesis.docx 
-Wk2_to_do.docx 
 
 # Office & other temp artefacts
 ~$*
 *.tmp
+
+# Auto-saved and working files
+~*.docx
+~*.xlsx
+~*.pptx
+
+# Optional: ignore Word documents if versioned elsewhere (like PDFs)
+# *.docx
+
+# Docker volumes and containers (optional)
+**/data/
+**/logs/
