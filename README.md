@@ -46,39 +46,6 @@ This repository supports a PhD-level research project focused on **detecting lat
 - **Pipelines**: Scheduled with Prefect for retraining and detection
 - **CI for notebooks**: Using `nbQA`, `papermill`, and `pytest`
 
----
-
-## PhD Writing
-
-- Drafts of thesis chapters, journal articles, and blog posts are versioned under:
-  - `notes/` – Research plans and early paper drafts
-  - `thesis/` (coming soon) – LaTeX source files for dissertation
-- Final thesis draft will be compiled and archived publicly with a DOI
-
----
-
-## Project Timeline & Milestones
-
--This is a 39-week R&D plan with ~7-15 hours/week commitment.
-
-### Current Week (2)
-
-| Focus |
-|-------|
-| Clone `benign-ws01` and `attacker-ws01` VMs<br>Install and harden Sysmon<br>Enable full audit policy<br>Initialize GitHub Actions CI and pre-commit hooks<br>Promote `dc-srv01` to Domain Controller (`corp.local`)<br>Begin infrastructure-as-code setup with Ansible or DSC<br>
-
-| Artifacts to produce |
-|----------------------|
-| `sysmon-config.xml`, `auditpol_backup.csv`<br>`.github/workflows/ci.yml`<br>`infra/ansible/`<br>`snapshot_ad-gold` |
-
----
-
-### Next Steps
-
-- **Week 3**: Deploy ELK stack and validate Sysmon ingestion, create Python venv + `requirements.txt`, capture first benign trace, configure WEF
-- **Week 4**: Write `sysmon_parser.py`, draft `feature_schema.json`, initialize Feast repo, start DVC/lakeFS, write ethics checklist, build test suite
-
----
 
 ## Deliverables So Far
 
@@ -86,11 +53,9 @@ This repository supports a PhD-level research project focused on **detecting lat
 |----------|-------------|
 | `snapshot_win10-gold` | Gold image of Windows 10 Enterprise |
 | `.gitignore`, `.devcontainer.json` | Git & dev environment initialized |
-| `notes/`, `tasks/` | Research plan, TODOs |
 | `docs/windows_os_hardening_guide.md` | SecOps documentation |
 | `configs/sysmon/sysmonconfig.xml` | Early Sysmon config draft |
 
----
 
 ## Inspiration & Philosophy
 
