@@ -55,11 +55,3 @@ This repository supports a PhD-level research project focused on **detecting lat
 | `.gitignore`, `.devcontainer.json` | Git & dev environment initialized |
 | `docs/windows_os_hardening_guide.md` | SecOps documentation |
 | `configs/sysmon/sysmonconfig.xml` | Early Sysmon config draft |
-
-
-## Inspiration & Philosophy
-
-This project integrates principles from:
-- MLOps best practices
-- Modern cybersecurity frameworks (e.g., MITRE ATT&CK)
-- Academic rigor with industrial-level tooling
